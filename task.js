@@ -73,6 +73,9 @@ console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 
 
 
+/*
+Lilly beautiful day example
+*/
 
 function reverseNumber(num) {
 	return num.split('').reverse().join('');
@@ -87,20 +90,25 @@ function lillyBeautifulBirthday(list, k) {
   	    }  else if(typeof k !== 'number') {
         	throw new SyntaxError("second arrgument must be number");
         }
-    
+    var count = 0;
     for(var i = 0; i < list.length; i++) {
     	const number = list[i]+'';
-      console.log(reverseNumber(number));
-      console.log(Math.abs(number - reverseNumber(number)))
-      
+      const diff = Math.abs(number - reverseNumber(number));
+      if(diff % 2 === 0) {
+      	console.log("it's her beautiful Day");
+        count++;
+      } else {
+      	console.log("it's not her beautiful Day");
+      }      
     }
+    return count;
     
   } catch(err) {
   	console.log(err);
   }
 }
 
-console.log(lillyBeautifulBirthday([12,14,18], 5));
+console.log("Total number days are : "+ lillyBeautifulBirthday([22,14,18], 5));
 
 
 
